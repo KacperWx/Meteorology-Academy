@@ -1,87 +1,241 @@
-.container{
+.hero{
 
-display:grid;
+    text-align:center;
 
-grid-template-columns:3fr 1fr;
+    padding:80px 20px;
 
-gap:40px;
-
-padding:50px;
+    background:linear-gradient(180deg,#08111d,#0f2742);
 
 }
 
-.lesson{
+.hero h1{
 
-background:#122a43;
+    font-size:52px;
 
-padding:30px;
-
-margin-bottom:25px;
-
-border-radius:12px;
+    margin-bottom:20px;
 
 }
 
-.lesson h2{
+.hero p{
 
-margin-bottom:10px;
+    max-width:900px;
 
-}
+    margin:auto;
 
-.lesson p{
+    color:#d0dceb;
 
-margin-bottom:20px;
+    line-height:1.7;
 
-color:#cddbea;
-
-}
-
-.lesson button{
-
-background:#2ec4ff;
-
-border:none;
-
-padding:12px 25px;
-
-border-radius:8px;
-
-cursor:pointer;
+    font-size:20px;
 
 }
 
-.right{
+.page{
 
-background:#10243d;
+    display:grid;
 
-padding:25px;
+    grid-template-columns:3fr 1fr;
 
-border-radius:12px;
+    gap:40px;
 
-height:300px;
+    max-width:1400px;
 
-}
+    margin:auto;
 
-.bar{
-
-background:#243b55;
-
-height:20px;
-
-border-radius:20px;
-
-margin:20px 0;
+    padding:50px;
 
 }
 
-.fill{
+.course-overview{
 
-height:20px;
+    margin-bottom:40px;
 
-width:0%;
+}
 
-background:#2ec4ff;
+.overview-card{
 
-border-radius:20px;
+    background:#13283d;
+
+    padding:35px;
+
+    border-radius:15px;
+
+}
+
+.overview-card h2{
+
+    margin-bottom:20px;
+
+}
+
+.overview-card p{
+
+    color:#d3dfeb;
+
+    line-height:1.8;
+
+}
+
+.stats{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:30px;
+
+}
+
+.stats div{
+
+    text-align:center;
+
+}
+
+.stats h3{
+
+    color:#39c2ff;
+
+}
+
+.module{
+
+    margin-bottom:50px;
+
+}
+
+.module h2{
+
+    margin-bottom:25px;
+
+    border-left:5px solid #39c2ff;
+
+    padding-left:15px;
+
+}
+
+.lesson-card{
+
+    background:#162f47;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+    transition:0.3s;
+
+    cursor:pointer;
+
+}
+
+.lesson-card:hover{
+
+    background:#214567;
+
+    transform:translateY(-3px);
+
+}
+
+.lesson-card h3{
+
+    margin-bottom:12px;
+
+}
+
+.lesson-card p{
+
+    color:#d3dfeb;
+
+    line-height:1.7;
+
+}
+
+.progress-panel{
+
+    position:sticky;
+
+    top:30px;
+
+    background:#13283d;
+
+    border-radius:15px;
+
+    padding:30px;
+
+}
+
+.progress-panel h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.progress-circle{
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    border:8px solid #39c2ff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    margin-bottom:30px;
+
+}
+
+.progress-info p{
+
+    margin-bottom:25px;
+
+    line-height:1.6;
+
+}
+
+@media(max-width:1000px){
+
+.page{
+
+grid-template-columns:1fr;
+
+}
+
+.progress-panel{
+
+position:relative;
+
+top:0;
+
+}
+
+.stats{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
 
 }
