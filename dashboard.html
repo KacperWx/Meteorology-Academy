@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Meteorology Academy</title>
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background"></div>
+
+    <div class="dashboard-wrapper">
+        <aside class="sidebar-card">
+            <div class="brand">
+                <i class="fa-solid fa-cloud-bolt"></i>
+                <h2>Meteo Academy</h2>
+            </div>
+            <nav class="side-nav">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="#" class="active"><i class="fa-solid fa-graduation-cap"></i> Dashboard</a>
+                <a href="pages/tropical.html"><i class="fa-solid fa-hurricane"></i> Tropical Meteo</a>
+                <a href="pages/simulations.html"><i class="fa-solid fa-tornado"></i> Simulations</a>
+                <a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+            </nav>
+        </aside>
+
+        <main class="main-workspace">
+            <header class="workspace-header">
+                <div>
+                    <h1>Welcome Back, Scholar</h1>
+                    <p class="subtitle" style="margin-bottom: 0;">Track your meteorological telemetry and modules.</p>
+                </div>
+                <div class="user-pill">
+                    <i class="fa-solid fa-user-satellite"></i>
+                    <span id="user-email-display">Loading profile...</span>
+                </div>
+            </header>
+
+            <div class="metrics-matrix">
+                <div class="mini-card streak-card">
+                    <div class="card-icon"><i class="fa-solid fa-fire"></i></div>
+                    <div class="card-info">
+                        <h3>Learning Streak</h3>
+                        <p id="streak-count">0 Days</p>
+                    </div>
+                </div>
+                <div class="mini-card progress-card">
+                    <div class="card-icon"><i class="fa-solid fa-book-open"></i></div>
+                    <div class="card-info">
+                        <h3>Lessons Completed</h3>
+                        <p id="lessons-count">0 Modules</p>
+                    </div>
+                </div>
+                <div class="mini-card score-card">
+                    <div class="card-icon"><i class="fa-solid fa-star"></i></div>
+                    <div class="card-info">
+                        <h3>Avg Quiz Score</h3>
+                        <p id="avg-score">0%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workspace-grid">
+                <div class="panel-card progress-panel">
+                    <h2>Course Progression Tracker</h2>
+                    <div class="progress-track-item">
+                        <div class="track-meta">
+                            <span>Tropical Meteorology</span>
+                            <span id="tropical-percent">0%</span>
+                        </div>
+                        <div class="bar-bg"><div class="bar-fill" id="tropical-fill" style="width: 0%"></div></div>
+                    </div>
+                    <div class="progress-track-item">
+                        <div class="track-meta">
+                            <span>Cyclogenesis Simulator Modules</span>
+                            <span id="cyclo-percent">0%</span>
+                        </div>
+                        <div class="bar-bg"><div class="bar-fill" id="cyclo-fill" style="width: 0%"></div></div>
+                    </div>
+                </div>
+
+                <div class="panel-card telemetry-panel">
+                    <h2>Live Telemetry Feed (Simulation)</h2>
+                    <div class="telemetry-box">
+                        <div class="sensor-node">
+                            <span class="label">Barometric Pressure</span>
+                            <span class="value" id="live-pressure">1013 hPa</span>
+                        </div>
+                        <div class="sensor-node">
+                            <span class="label">Convective Available Potential Energy (CAPE)</span>
+                            <span class="value" id="live-cape">1200 J/kg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+/* ==========================================================
+   Dashboard UI Extension Core Layout
+   ========================================================== */
+
+.dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+    padding: 30px;
+    gap: 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Sidebar Structural Mod */
+.sidebar-card {
+    width: 280px;
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 20px;
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--accent);
+}
+
+.brand i {
+    font-size: 24px;
+}
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.side-nav a {
+    color: var(--secondary);
+    text-decoration: none;
+    padding: 14px 18px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    transition: all 0.25s ease;
+}
+
+.side-nav a:hover, .side-nav a.active {
+    color: var(--text);
+    background: var(--input);
+    box-shadow: inset 4px 0 0 var(--accent);
+}
+
+/* Main Panel Workspace */
+.main-workspace {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.workspace-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-pill {
+    background: var(--card);
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--accent);
+}
+
+/* Metrics Row Layout Matrix */
+.metrics-matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.mini-card {
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, .05);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card-icon {
+    font-size: 24px;
+    color: var(--accent);
+    background: var(--input);
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-info h3 {
+    font-size: 14px;
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.card-info p {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+/* Workspace Panels */
+.workspace-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 25px;
+}
+
+.panel-card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.panel-card h2 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Progress Component Elements */
+.progress-track-item {
+    margin-bottom: 20px;
+}
+
+.track-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: var(--secondary);
+}
+
+.bar-bg {
+    background: var(--input);
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    background: var(--accent);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Telemetry Box Subcomponents */
+.telemetry-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sensor-node {
+    background: var(--input);
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sensor-node .label {
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.sensor-node .value {
+    font-family: monospace;
+    font-size: 16px;
+    color: var(--success);
+    font-weight: bold;
+}
+
+/* Responsive Dashboard Queries */
+@media(max-width: 1024px) {
+    .dashboard-wrapper { flex-direction: column; }
+    .sidebar-card { width: 100%; gap: 20px; }
+    .side-nav { flex-direction: row; flex-wrap: wrap; }
+    .workspace-grid { grid-template-columns: 1fr; }
+}
+
+@media(max-width: 680px) {
+    .metrics-matrix { grid-template-columns: 1fr; }
+}
