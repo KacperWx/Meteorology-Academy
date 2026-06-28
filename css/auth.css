@@ -1,0 +1,461 @@
+/* ==========================================================
+   Meteorology Academy
+   Authentication Stylesheet
+   ========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --background: #06111d;
+    --background2: #0b2744;
+    --background3: #114b72;
+
+    --card: rgba(17, 33, 52, 0.82);
+
+    --input: #173450;
+
+    --accent: #2ec4ff;
+    --accent-hover: #53d3ff;
+
+    --text: #ffffff;
+    --secondary: #c6d7e6;
+
+    --success: #57e389;
+    --warning: #ffd166;
+    --danger: #ff7d7d;
+
+}
+
+body {
+
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   Background
+   ========================================================== */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--background),
+            var(--background2),
+            var(--background3)
+        );
+
+    z-index: -2;
+
+}
+
+.background::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    top: -250px;
+    right: -150px;
+
+    border-radius: 50%;
+
+    background: rgba(46,196,255,.09);
+
+    filter: blur(80px);
+
+}
+
+.background::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    bottom: -220px;
+    left: -150px;
+
+    border-radius: 50%;
+
+    background: rgba(0,140,255,.08);
+
+    filter: blur(90px);
+
+}
+
+
+/* ==========================================================
+   Main Layout
+   ========================================================== */
+
+.login-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 100vh;
+
+    padding: 30px;
+
+}
+
+.login-card {
+
+    width: 430px;
+
+    background: var(--card);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: 20px;
+
+    padding: 45px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.40);
+
+}
+
+
+/* ==========================================================
+   Headings
+   ========================================================== */
+
+.login-card h1 {
+
+    font-size: 34px;
+
+    margin-bottom: 10px;
+
+}
+
+.subtitle {
+
+    color: var(--secondary);
+
+    margin-bottom: 35px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ==========================================================
+   Inputs
+   ========================================================== */
+
+input {
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin-bottom: 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--input);
+
+    color: white;
+
+    font-size: 16px;
+
+    transition: .25s;
+
+}
+
+input::placeholder {
+
+    color: #aac2d8;
+
+}
+
+input:focus {
+
+    outline: none;
+
+    box-shadow: 0 0 0 2px var(--accent);
+
+}
+
+
+/* ==========================================================
+   Password Box
+   ========================================================== */
+
+.password-container {
+
+    position: relative;
+
+}
+
+.password-container input {
+
+    padding-right: 55px;
+
+}
+
+.eye-button {
+
+    position: absolute;
+
+    top: 42%;
+
+    right: 15px;
+
+    transform: translateY(-50%);
+
+    background: none;
+
+    border: none;
+
+    color: #b6d6ec;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: .25s;
+
+}
+
+.eye-button:hover {
+
+    color: var(--accent);
+
+}
+
+
+/* ==========================================================
+   Password Strength
+   ========================================================== */
+
+.password-strength {
+
+    font-size: 14px;
+
+    margin-top: -10px;
+
+    margin-bottom: 18px;
+
+    color: var(--secondary);
+
+}
+
+.password-strength.weak {
+
+    color: var(--danger);
+
+}
+
+.password-strength.medium {
+
+    color: var(--warning);
+
+}
+
+.password-strength.strong {
+
+    color: var(--success);
+
+}
+
+
+/* ==========================================================
+   Buttons
+   ========================================================== */
+
+button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--accent);
+
+    color: #06223a;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+button:hover {
+
+    background: var(--accent-hover);
+
+    transform: translateY(-2px);
+
+}
+
+button:disabled {
+
+    opacity: .55;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+/* ==========================================================
+   Links
+   ========================================================== */
+
+.links {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 28px;
+
+}
+
+.links a {
+
+    color: #8bd9ff;
+
+    text-decoration: none;
+
+    transition: .25s;
+
+}
+
+.links a:hover {
+
+    color: white;
+
+    text-decoration: underline;
+
+}
+
+
+/* ==========================================================
+   Messages
+   ========================================================== */
+
+#errorMessage {
+
+    min-height: 24px;
+
+    margin-top: 18px;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    color: var(--danger);
+
+}
+
+
+/* ==========================================================
+   Loading Animation
+   ========================================================== */
+
+.loading {
+
+    opacity: .6;
+
+    pointer-events: none;
+
+}
+
+
+/* ==========================================================
+   Fade Animation
+   ========================================================== */
+
+.login-card {
+
+    animation: fadeIn .7s ease;
+
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Mobile
+   ========================================================== */
+
+@media (max-width:600px) {
+
+    .login-card {
+
+        width: 100%;
+
+        padding: 35px;
+
+    }
+
+    .links {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+
+    }
+
+}

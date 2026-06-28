@@ -1,241 +1,87 @@
-.hero{
+.container{
 
-    text-align:center;
+display:grid;
 
-    padding:80px 20px;
+grid-template-columns:3fr 1fr;
 
-    background:linear-gradient(180deg,#08111d,#0f2742);
+gap:40px;
 
-}
-
-.hero h1{
-
-    font-size:52px;
-
-    margin-bottom:20px;
+padding:50px;
 
 }
 
-.hero p{
+.lesson{
 
-    max-width:900px;
+background:#122a43;
 
-    margin:auto;
+padding:30px;
 
-    color:#d0dceb;
+margin-bottom:25px;
 
-    line-height:1.7;
-
-    font-size:20px;
+border-radius:12px;
 
 }
 
-.page{
+.lesson h2{
 
-    display:grid;
-
-    grid-template-columns:3fr 1fr;
-
-    gap:40px;
-
-    max-width:1400px;
-
-    margin:auto;
-
-    padding:50px;
+margin-bottom:10px;
 
 }
 
-.course-overview{
+.lesson p{
 
-    margin-bottom:40px;
+margin-bottom:20px;
 
-}
-
-.overview-card{
-
-    background:#13283d;
-
-    padding:35px;
-
-    border-radius:15px;
+color:#cddbea;
 
 }
 
-.overview-card h2{
+.lesson button{
 
-    margin-bottom:20px;
+background:#2ec4ff;
 
-}
+border:none;
 
-.overview-card p{
+padding:12px 25px;
 
-    color:#d3dfeb;
+border-radius:8px;
 
-    line-height:1.8;
-
-}
-
-.stats{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-top:30px;
+cursor:pointer;
 
 }
 
-.stats div{
+.right{
 
-    text-align:center;
+background:#10243d;
 
-}
+padding:25px;
 
-.stats h3{
+border-radius:12px;
 
-    color:#39c2ff;
-
-}
-
-.module{
-
-    margin-bottom:50px;
+height:300px;
 
 }
 
-.module h2{
+.bar{
 
-    margin-bottom:25px;
+background:#243b55;
 
-    border-left:5px solid #39c2ff;
+height:20px;
 
-    padding-left:15px;
+border-radius:20px;
 
-}
-
-.lesson-card{
-
-    background:#162f47;
-
-    padding:25px;
-
-    border-radius:12px;
-
-    margin-bottom:20px;
-
-    transition:0.3s;
-
-    cursor:pointer;
+margin:20px 0;
 
 }
 
-.lesson-card:hover{
+.fill{
 
-    background:#214567;
+height:20px;
 
-    transform:translateY(-3px);
+width:0%;
 
-}
+background:#2ec4ff;
 
-.lesson-card h3{
-
-    margin-bottom:12px;
-
-}
-
-.lesson-card p{
-
-    color:#d3dfeb;
-
-    line-height:1.7;
-
-}
-
-.progress-panel{
-
-    position:sticky;
-
-    top:30px;
-
-    background:#13283d;
-
-    border-radius:15px;
-
-    padding:30px;
-
-}
-
-.progress-panel h2{
-
-    text-align:center;
-
-    margin-bottom:25px;
-
-}
-
-.progress-circle{
-
-    width:140px;
-
-    height:140px;
-
-    border-radius:50%;
-
-    margin:auto;
-
-    border:8px solid #39c2ff;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:32px;
-
-    font-weight:bold;
-
-    margin-bottom:30px;
-
-}
-
-.progress-info p{
-
-    margin-bottom:25px;
-
-    line-height:1.6;
-
-}
-
-@media(max-width:1000px){
-
-.page{
-
-grid-template-columns:1fr;
-
-}
-
-.progress-panel{
-
-position:relative;
-
-top:0;
-
-}
-
-.stats{
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
-.hero h1{
-
-font-size:40px;
-
-}
+border-radius:20px;
 
 }
