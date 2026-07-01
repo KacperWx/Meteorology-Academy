@@ -69,110 +69,67 @@ if (registerForm) {
 
     registerForm.addEventListener("submit", async (event) => {
 
-        event.preventDefault();
+    event.preventDefault();
 
-        const displayName =
-            document.getElementById("displayName").value.trim();
+    const displayName = document.getElementById("displayName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
 
-        const email =
-            document.getElementById("email").value.trim();
+    const errorMessage = document.getElementById("errorMessage");
 
-        const password =
-            document.getElementById("password").value;
+    errorMessage.textContent = "";
 
-        const confirmPassword =
-            document.getElementById("confirmPassword").value;
+    if (password !== confirmPassword) {
+        errorMessage.textContent = "Passwords do not match.";
+        return;
+    }
 
-        const errorMessage =
-            document.getElementById("errorMessage");
+    try {
 
-        errorMessage.style.color = "#ff7d7d";
-        errorMessage.textContent = "";
+        // Create the authentication account
+        const userCredential = await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
 
-        if (password !== confirmPassword) {
+        const user = userCredential.user;
 
-            errorMessage.textContent =
-                "Passwords do not match.";
+        // Set the user's display name
+        await updateProfile(user, {
+            displayName: displayName
+        });
 
-            return;
+        // Create the Firestore profile
+        await setDoc(doc(db, "users", user.uid), {
 
-        }
+            displayName: displayName,
+            email: email,
 
-        try {
+            createdAt: serverTimestamp(),
 
-            const userCredential =
-                await createUserWithEmailAndPassword(
-                    auth,
-                    email,
-                    password
-                );
+            progress: {
+                overallProgress: 0,
+                completedLessons: [],
+                quizScores: {}
+            }
 
-            const user = userCredential.user;
+        });
 
-            await updateProfile(user, {
+        // Redirect to the dashboard
+        window.location.replace("dashboard.html");
 
-                displayName: displayName
+    }
 
-            });
+    catch(error){
 
-            await setDoc(
+        errorMessage.textContent =
+            getFirebaseErrorMessage(error.code);
 
-                doc(db, "users", user.uid),
+    }
 
-                {
-
-                    displayName: displayName,
-
-                    email: email,
-
-                    createdAt: serverTimestamp(),
-
-                    progress: {
-
-                        completedLessons: [],
-
-                        quizScores: {},
-
-                        currentCourse: "tropical-meteorology",
-
-                        overallProgress: 0
-
-                    },
-
-                    statistics: {
-
-                        streak: 0,
-
-                        lessonsCompleted: 0,
-
-                        quizzesCompleted: 0
-
-                    },
-
-                    preferences: {
-
-                        theme: "dark"
-
-                    }
-
-                }
-
-            );
-
-            window.location.href = "dashboard.html";
-
-        }
-
-        catch (error) {
-
-            errorMessage.textContent =
-                getFirebaseErrorMessage(error.code);
-
-        }
-
-    });
-
-}
+});
 
 
 // ------------------------------
