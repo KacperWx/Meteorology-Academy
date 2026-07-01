@@ -163,7 +163,7 @@ if (resetButton) {
             errorMessage.style.color = "#6dff9b";
 
             errorMessage.textContent =
-                "Password reset email sent.";
+                "Password reset email sent. Please check your spam emails!";
 
         }
 
