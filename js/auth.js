@@ -131,6 +131,7 @@ if (registerForm) {
 
 });
 
+}
 
 // ------------------------------
 // PASSWORD RESET
