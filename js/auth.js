@@ -5,12 +5,14 @@ import {
     signInWithEmailAndPassword,
     sendPasswordResetEmail,
     onAuthStateChanged,
-    signOut
+    signOut,
+    updateProfile
 } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
 
 import {
     doc,
-    setDoc
+    setDoc,
+    serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
 
 
@@ -69,10 +71,32 @@ if (registerForm) {
 
         event.preventDefault();
 
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+        const displayName =
+            document.getElementById("displayName").value.trim();
 
+        const email =
+            document.getElementById("email").value.trim();
+
+        const password =
+            document.getElementById("password").value;
+
+        const confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+        const errorMessage =
+            document.getElementById("errorMessage");
+
+        errorMessage.style.color = "#ff7d7d";
         errorMessage.textContent = "";
+
+        if (password !== confirmPassword) {
+
+            errorMessage.textContent =
+                "Passwords do not match.";
+
+            return;
+
+        }
 
         try {
 
@@ -83,23 +107,53 @@ if (registerForm) {
                     password
                 );
 
+            const user = userCredential.user;
+
+            await updateProfile(user, {
+
+                displayName: displayName
+
+            });
+
             await setDoc(
 
-                doc(db, "users", userCredential.user.uid),
+                doc(db, "users", user.uid),
 
                 {
 
+                    displayName: displayName,
+
                     email: email,
 
-                    created: new Date(),
+                    createdAt: serverTimestamp(),
 
-                    completedLessons: [],
+                    progress: {
 
-                    quizScores: {},
+                        completedLessons: [],
 
-                    streak: 0,
+                        quizScores: {},
 
-                    mastery: {}
+                        currentCourse: "tropical-meteorology",
+
+                        overallProgress: 0
+
+                    },
+
+                    statistics: {
+
+                        streak: 0,
+
+                        lessonsCompleted: 0,
+
+                        quizzesCompleted: 0
+
+                    },
+
+                    preferences: {
+
+                        theme: "dark"
+
+                    }
 
                 }
 
@@ -111,14 +165,14 @@ if (registerForm) {
 
         catch (error) {
 
-            errorMessage.textContent = error.message;
+            errorMessage.textContent =
+                getFirebaseErrorMessage(error.code);
 
         }
 
     });
 
 }
-
 
 
 // ------------------------------
