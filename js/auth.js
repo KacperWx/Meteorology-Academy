@@ -124,8 +124,8 @@ if (registerForm) {
 
     catch(error){
 
-        errorMessage.textContent =
-            getFirebaseErrorMessage(error.code);
+    errorMessage.textContent = error.message;
+    console.error(error);
 
     }
 
