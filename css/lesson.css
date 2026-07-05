@@ -1,0 +1,512 @@
+/* =====================================================
+   Meteorology Academy
+   Lesson Engine Styles
+   ===================================================== */
+
+:root {
+
+    --background: #08111f;
+    --surface: #111b2d;
+    --surface-light: #162338;
+
+    --primary: #4db8ff;
+    --primary-hover: #6ec7ff;
+
+    --text: #f3f6fb;
+    --text-secondary: #b8c3d9;
+
+    --success: #36d27d;
+    --error: #ff5e6c;
+
+    --border: rgba(255,255,255,0.08);
+
+    --shadow:
+        0 15px 40px rgba(0,0,0,0.35);
+
+    --radius: 16px;
+
+    --transition: 0.25s ease;
+
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+
+    background: linear-gradient(
+        160deg,
+        #07111d,
+        #0d1728
+    );
+
+    color: var(--text);
+
+    font-family:
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    min-height: 100vh;
+
+}
+
+/* ==========================
+   Header
+   ========================== */
+
+header {
+
+    height: 72px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 40px;
+
+    background: rgba(10,18,32,0.92);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+}
+
+.logo {
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    color: var(--primary);
+
+}
+
+.course {
+
+    color: var(--text-secondary);
+
+}
+
+/* ==========================
+   Layout
+   ========================== */
+
+.lesson-wrapper {
+
+    display: grid;
+
+    grid-template-columns: 320px 1fr;
+
+    min-height: calc(100vh - 72px);
+
+}
+
+/* ==========================
+   Sidebar
+   ========================== */
+
+.sidebar {
+
+    background: var(--surface);
+
+    border-right: 1px solid var(--border);
+
+    padding: 30px;
+
+    overflow-y: auto;
+
+}
+
+.sidebar h3 {
+
+    font-size: 1.35rem;
+
+    margin-bottom: 18px;
+
+}
+
+#lessonProgress {
+
+    margin-bottom: 30px;
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+    font-size: 1rem;
+
+}
+
+.sidebar-item {
+
+    display: block;
+
+    width: 100%;
+
+    text-align: left;
+
+    margin-bottom: 10px;
+
+    padding: 14px;
+
+    background: transparent;
+
+    color: var(--text-secondary);
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    font-size: 0.95rem;
+
+}
+
+.sidebar-item:hover {
+
+    background: var(--surface-light);
+
+    color: white;
+
+}
+
+.sidebar-item.active {
+
+    background: var(--primary);
+
+    color: #04111f;
+
+    font-weight: 700;
+
+}
+
+/* ==========================
+   Lesson
+   ========================== */
+
+.lesson {
+
+    padding: 60px;
+
+}
+
+.card {
+
+    background: var(--surface);
+
+    border-radius: var(--radius);
+
+    padding: 50px;
+
+    box-shadow: var(--shadow);
+
+    border: 1px solid var(--border);
+
+    min-height: 520px;
+
+    animation: fadeIn .35s ease;
+
+}
+
+.card h1 {
+
+    font-size: 2rem;
+
+    margin-bottom: 30px;
+
+}
+
+.card p {
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    color: var(--text-secondary);
+
+    margin-bottom: 25px;
+
+}
+
+/* ==========================
+   Images
+   ========================== */
+
+#cardMedia {
+
+    margin-top: 35px;
+
+}
+
+#cardMedia img {
+
+    max-width: 100%;
+
+    border-radius: 14px;
+
+    border: 1px solid var(--border);
+
+}
+
+/* ==========================
+   Equations
+   ========================== */
+
+.equation {
+
+    margin-top: 25px;
+
+    background: #081321;
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    font-size: 1.4rem;
+
+    font-family: Consolas, monospace;
+
+    color: var(--primary);
+
+}
+
+/* ==========================
+   Literature
+   ========================== */
+
+.literature-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 25px;
+
+}
+
+.literature-table th {
+
+    background: var(--primary);
+
+    color: #04111f;
+
+    padding: 14px;
+
+}
+
+.literature-table td {
+
+    padding: 14px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+.literature-table tr:hover {
+
+    background: rgba(255,255,255,0.04);
+
+}
+
+/* ==========================
+   Questions
+   ========================== */
+
+.question {
+
+    margin-top: 30px;
+
+}
+
+.question h3 {
+
+    margin-bottom: 22px;
+
+}
+
+.answer-button {
+
+    display: block;
+
+    width: 100%;
+
+    text-align: left;
+
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--surface-light);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    font-size: 1rem;
+
+}
+
+.answer-button:hover {
+
+    transform: translateX(6px);
+
+    background: #21324d;
+
+}
+
+.answer-button.correct {
+
+    background: var(--success);
+
+    color: white;
+
+}
+
+.answer-button.incorrect {
+
+    background: var(--error);
+
+    color: white;
+
+}
+
+.answer-explanation {
+
+    margin-top: 22px;
+
+    padding: 18px;
+
+    border-left: 4px solid var(--primary);
+
+    background: rgba(77,184,255,0.08);
+
+    border-radius: 10px;
+
+}
+
+/* ==========================
+   Navigation
+   ========================== */
+
+.navigation {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 35px;
+
+}
+
+.navigation button {
+
+    background: var(--primary);
+
+    color: #04111f;
+
+    border: none;
+
+    padding: 16px 34px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    transition: var(--transition);
+
+}
+
+.navigation button:hover {
+
+    background: var(--primary-hover);
+
+    transform: translateY(-2px);
+
+}
+
+/* ==========================
+   Animation
+   ========================== */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/* ==========================
+   Mobile
+   ========================== */
+
+@media (max-width: 1000px) {
+
+    .lesson-wrapper {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .sidebar {
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
+
+    }
+
+    .lesson {
+
+        padding: 25px;
+
+    }
+
+    .card {
+
+        padding: 30px;
+
+    }
+
+}

@@ -1,137 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
+.password-container{
 
-<head>
+position:relative;
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+}
 
-    <title>Create Account | Meteorology Academy</title>
+.password-container input{
 
-    <link rel="stylesheet" href="css/auth.css">
+padding-right:55px;
 
-</head>
+}
 
-<body>
+.eye-button{
 
-<div class="background"></div>
+position:absolute;
 
-<div class="auth-page">
+right:10px;
 
-    <section class="info-panel">
+top:50%;
 
-        <h1>Meteorology Academy</h1>
+transform:translateY(-50%);
 
-        <p class="tagline">
-            University-level meteorology education for students,
-            researchers and weather enthusiasts.
-        </p>
+background:none;
 
-        <div class="feature-list">
+border:none;
 
-            <div class="feature">
-                🌍 Track your learning progress
-            </div>
+cursor:pointer;
 
-            <div class="feature">
-                📚 Interactive university-level lessons
-            </div>
+font-size:18px;
 
-            <div class="feature">
-                🧠 Adaptive quizzes
-            </div>
+color:#d0dceb;
 
-            <div class="feature">
-                📈 Detailed progress analytics
-            </div>
+width:auto;
 
-            <div class="feature">
-                🛰 Satellite imagery & visualisations
-            </div>
+padding:0;
 
-        </div>
+}
 
-    </section>
+.eye-button:hover{
 
-    <section class="login-card">
+color:#2ec4ff;
 
-        <h2>Create your account</h2>
+}
 
-        <p class="subtitle">
+.password-strength{
 
-            Start your journey through atmospheric science.
+margin-top:-8px;
 
-        </p>
+margin-bottom:18px;
 
-        <form id="registerForm">
+font-size:14px;
 
-            <input
-                type="text"
-                id="displayName"
-                placeholder="Full Name"
-                required
-            >
+color:#c9d9ea;
 
-            <input
-                type="email"
-                id="email"
-                placeholder="Email Address"
-                required
-            >
-
-            <div class="password-container">
-
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Password"
-                    required
-                >
-
-            </div>
-
-            <div
-                class="password-strength"
-                id="passwordStrength">
-
-                Password strength: —
-
-            </div>
-
-            <input
-                type="password"
-                id="confirmPassword"
-                placeholder="Confirm Password"
-                required
-            >
-
-            <button type="submit">
-
-                Create Account
-
-            </button>
-
-        </form>
-
-        <p id="errorMessage"></p>
-
-        <div class="links">
-
-            <a href="login.html">
-
-                Already have an account?
-
-            </a>
-
-        </div>
-
-    </section>
-
-</div>
-
-<script type="module" src="js/auth.js"></script>
-<script src="js/password.js"></script>
-
-</body>
-
-</html>
+}

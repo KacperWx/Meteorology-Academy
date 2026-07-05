@@ -5,14 +5,12 @@ import {
     signInWithEmailAndPassword,
     sendPasswordResetEmail,
     onAuthStateChanged,
-    signOut,
-    updateProfile
+    signOut
 } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
 
 import {
     doc,
-    setDoc,
-    serverTimestamp
+    setDoc
 } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
 
 
@@ -69,69 +67,59 @@ if (registerForm) {
 
     registerForm.addEventListener("submit", async (event) => {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    const displayName = document.getElementById("displayName").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
-    const errorMessage = document.getElementById("errorMessage");
+        errorMessage.textContent = "";
 
-    errorMessage.textContent = "";
+        try {
 
-    if (password !== confirmPassword) {
-        errorMessage.textContent = "Passwords do not match.";
-        return;
-    }
+            const userCredential =
+                await createUserWithEmailAndPassword(
+                    auth,
+                    email,
+                    password
+                );
 
-    try {
+            await setDoc(
 
-        // Create the authentication account
-        const userCredential = await createUserWithEmailAndPassword(
-            auth,
-            email,
-            password
-        );
+                doc(db, "users", userCredential.user.uid),
 
-        const user = userCredential.user;
+                {
 
-        // Set the user's display name
-        await updateProfile(user, {
-            displayName: displayName
-        });
+                    email: email,
 
-        // Create the Firestore profile
-        await setDoc(doc(db, "users", user.uid), {
+                    created: new Date(),
 
-            displayName: displayName,
-            email: email,
+                    completedLessons: [],
 
-            createdAt: serverTimestamp(),
+                    quizScores: {},
 
-            progress: {
-                overallProgress: 0,
-                completedLessons: [],
-                quizScores: {}
-            }
+                    streak: 0,
 
-        });
+                    mastery: {}
 
-        // Redirect to the dashboard
-        window.location.replace("dashboard.html");
+                }
 
-    }
+            );
 
-    catch(error){
+            window.location.href = "dashboard.html";
 
-    errorMessage.textContent = error.message;
-    console.error(error);
+        }
 
-    }
+        catch (error) {
 
-});
+            errorMessage.textContent = error.message;
+
+        }
+
+    });
 
 }
+
+
 
 // ------------------------------
 // PASSWORD RESET
@@ -163,7 +151,7 @@ if (resetButton) {
             errorMessage.style.color = "#6dff9b";
 
             errorMessage.textContent =
-                "Password reset email sent. Please check your spam emails!";
+                "Password reset email sent.";
 
         }
 
