@@ -196,7 +196,7 @@ export const lessons = {
 
                 status: "published",
 
-                type: "summary",
+                type: "info",
 
                 title: "Lesson Summary",
 
