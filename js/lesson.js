@@ -9,12 +9,13 @@ const lesson = lessons[lessonID];
 
 if (!lesson) {
 
-    alert("Lesson not found.");
-
-    throw new Error("Lesson not found.");
+    console.error("Lesson not found.");
 
 }
+else {
 
-const engine = new LessonEngine(lesson);
+    const engine = new LessonEngine(lesson);
 
-engine.initialise();
+    engine.initialise();
+
+}
