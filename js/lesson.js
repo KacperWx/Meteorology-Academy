@@ -1,3 +1,5 @@
+console.log("Lesson JS started");
+
 import { lessons } from "./lessonData.js";
 import { LessonEngine } from "./lessonEngine.js";
 
