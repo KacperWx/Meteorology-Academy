@@ -1,295 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>About | Meteorology Academy</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Spectral:wght@500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="../css/about.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About | Meteorology Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&family=Spectral:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/about.css">
 </head>
-
 <body>
 
 <nav>
-
-<div class="logo">
-
-🌍 Meteorology Education
-
-</div>
-
-<ul>
-
-<li><a href="../index.html">Home</a></li>
-<li><a href="tropical.html">Tropical Cyclones</a></li>
-<li><a href="about.html" class="active">About</a></li>
-
-</ul>
-
+    <div class="logo">
+        🌍 Meteorology Education
+    </div>
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="tropical.html">Tropical Cyclones</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+    </ul>
 </nav>
 
-<section class="hero">
+<!-- Hero section styled using .about-hero from CSS -->
+<section class="about-hero">
+    <!-- SVG Station Model background as configured in the CSS -->
+    <div class="station-model" aria-hidden="true">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="40" class="ring ring-3" />
+            <circle cx="50" cy="50" r="30" class="ring ring-2" />
+            <circle cx="50" cy="50" r="20" class="ring ring-1" />
+            <circle cx="50" cy="50" r="3" class="station-dot" />
+            <line x1="50" y1="50" x2="50" y2="20" class="wind-barb" />
+            <line x1="50" y1="20" x2="60" y2="15" class="wind-barb" />
+            <line x1="50" y1="25" x2="58" y2="21" class="wind-barb" />
+        </svg>
+    </div>
 
     <div class="hero-content">
-
-        <span class="hero-tag">
-            University-Level Meteorology Education
-        </span>
-
-        <h1>
-            Learn the science behind every forecast.
-        </h1>
-
+        <span class="eyebrow">University-Level Meteorology Education</span>
+        <h1>Learn the science behind every forecast.</h1>
         <p class="hero-lede">
-
             We teach the physics behind the forecast—from atmospheric
             dynamics and tropical cyclone theory to the research literature
             that underpins modern meteorology.
-
         </p>
-
-        <div class="hero-buttons">
-
-            <a href="tropical.html" class="primary-btn">
-
-                Explore Courses
-
-            </a>
-
-            <a href="#mission" class="secondary-btn">
-
-                Learn More
-
-            </a>
-
-        </div>
-
     </div>
-
 </section>
-
-<section class="stats">
-
-    <div class="stat-card">
-
-        <h2>University</h2>
-
-        <p>Level Content</p>
-
-    </div>
-
-    <div class="stat-card">
-
-        <h2>Research</h2>
-
-        <p>Literature Driven</p>
-
-    </div>
-
-    <div class="stat-card">
-
-        <h2>Interactive</h2>
-
-        <p>Lessons & Quizzes</p>
-
-    </div>
-
-    <div class="stat-card">
-
-        <h2>Progress</h2>
-
-        <p>Track Your Learning</p>
-
-    </div>
-
-</section>
-
-<!-- ============================================= -->
-<!-- MISSION                                        -->
-<!-- ============================================= -->
 
 <main>
-<section class="panel mission" id="mission">
-
-    <div class="section-header">
-
-        <p class="section-label">
-
-            Our Mission
-
+    <!-- MISSION Section styled using .panel -->
+    <section class="panel mission" id="mission">
+        <p class="section-label">Our Mission</p>
+        <h2>Bridging theory and forecasting</h2>
+        <p class="panel-intro">
+            Meteorology Academy was built to make the theory behind
+            weather forecasting accessible without watering it down.
         </p>
+        <p>
+            Each lesson follows the same reasoning a professional
+            meteorologist relies on—from balanced forces and conserved
+            quantities to the research literature that established
+            modern forecasting methods.
+        </p>
+    </section>
 
-        <h2>
-
-            Bridging theory and forecasting
-
-        </h2>
-
-    </div>
-
-    <div class="mission-grid">
-
-        <div class="mission-text">
-
-            <p>
-
-                Meteorology Academy was built to make the theory behind
-                weather forecasting accessible without watering it down.
-
-                Each lesson follows the same reasoning a professional
-                meteorologist relies on—from balanced forces and conserved
-                quantities to the research literature that established
-                modern forecasting methods.
-
-            </p>
-
-        </div>
-
-        <div class="mission-highlight">
-
-            <h3>
-
-                What makes us different?
-
-            </h3>
-
-            <ul>
-
-                <li>University-level explanations</li>
-
-                <li>Interactive learning</li>
-
-                <li>Research-based lessons</li>
-
-                <li>Progress tracking</li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ============================================= -->
-<!-- WHAT WE TEACH                                  -->
-<!-- ============================================= -->
-
-<div class="pillar">
-
-    <div class="pillar-icon">
-
-        🌪
-
-    </div>
-
-    <h3>
-
-        Tropical Meteorology
-
-    </h3>
-
-    <p>
-
-        Formation, structure and evolution of tropical
-        cyclones, grounded in vortex dynamics.
-
-    </p>
-
-    <span class="coming-soon">
-
-        Advanced Course
-
-    </span>
-
-</div>
-
-<!-- ============================================= -->
-<!-- TEAM                                           -->
-<!-- ============================================= -->
-
-<section class="panel team">
-
-    <p class="section-label">Behind the Forecast</p>
-
-    <h2>Who's building this</h2>
-
-    <div class="team-grid">
-
-        <div class="team-card">
-
-            <div class="avatar" aria-hidden="true">
-
-                <!-- EDIT ME: replace with an <img> of yourself if you'd like -->
-                <span>KW</span>
-
+    <!-- PILLARS Section styled using .panel and .pillar-grid -->
+    <section class="panel pillars">
+        <p class="section-label">What We Teach</p>
+        <h2>Core Academic Pillars</h2>
+        
+        <div class="pillar-grid">
+            <div class="pillar">
+                <span class="pillar-mark">01 / Dynamics</span>
+                <h3>Tropical Meteorology</h3>
+                <p>Formation, structure and evolution of tropical cyclones, grounded in vortex dynamics.</p>
             </div>
-
-            <h3>Kacper Plonowski
-            </h3>
-
-            <p class="team-role">Founder
-            </p>
-
-            <p class="team-bio">"I created Meteorology Academy to provide a modern platform where students can learn advanced meteorology through interactive lessons inspired by educational platforms that transformed my own learning."
-
-            </p>
-
+            <div class="pillar">
+                <span class="pillar-mark">02 / Physics</span>
+                <h3>Atmospheric Motion</h3>
+                <p>Governing equations of fluid dynamics, thermodynamic profiles, and balanced force approximations.</p>
+            </div>
+            <div class="pillar">
+                <span class="pillar-mark">03 / Synthesis</span>
+                <h3>Synoptic Analysis</h3>
+                <p>Interpretation of numerical weather prediction models, frontogenesis, and observational charts.</p>
+            </div>
         </div>
+    </section>
 
-        <!-- Duplicate the .team-card block above to add more people -->
+    <!-- TEAM Section styled using .panel and .team-grid -->
+    <section class="panel team">
+        <p class="section-label">Behind the Forecast</p>
+        <h2>Who's building this</h2>
 
-    </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="avatar" aria-hidden="true">KP</div>
+                <h3>Kacper Plonowski</h3>
+                <p class="team-role">Founder</p>
+                <p class="team-bio">"I created Meteorology Academy to provide a modern platform where students can learn advanced meteorology through interactive lessons inspired by educational platforms that transformed my own learning."</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar" aria-hidden="true">MA</div>
+                <h3>Join Us</h3>
+                <p class="team-role">Contributors</p>
+                <p class="team-bio">We actively collaborate with atmospheric scientists, researchers, and professional forecasters to write high-fidelity academic content and visual interactive models.</p>
+            </div>
+        </div>
+    </section>
 
-</section>
-
-<!-- ============================================= -->
-<!-- CONTACT                                        -->
-<!-- ============================================= -->
-
-<section class="contact-cta">
-
-    <h2>
-
-        Help shape Meteorology Academy
-
-    </h2>
-
-    <p>
-
-        Found an error? Have an idea for a lesson?
-        I'd love to hear your feedback as the
-        platform continues to grow.
-
-    </p>
-
-    <a href="https://discord.com"
-
-       class="primary-btn">
-
-        Join the Community
-
-    </a>
-
-</section>
-
+    <!-- CONTACT / FEEDBACK Section styled using .panel -->
+    <section class="panel contact">
+        <p class="section-label">Get Involved</p>
+        <h2>Help shape the Academy</h2>
+        <p>
+            Found an error? Have an idea for a lesson?
+            We would love to hear your feedback as the platform continues to grow and adapt.
+        </p>
+        <p class="contact-link-wrapper">
+            <a href="https://discord.com" target="_blank" rel="noopener" class="minimal-link">Join our Discord Community &rarr;</a>
+        </p>
+    </section>
 </main>
 
 <footer class="about-footer">
-
     <p>&copy; 2026 Meteorology Academy</p>
-
 </footer>
 
 </body>
-
 </html>

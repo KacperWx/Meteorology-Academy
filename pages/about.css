@@ -1,8 +1,6 @@
 /*
 =========================================================
-Meteorology Academy
-About Page Styles
-Direction: synoptic chart / station model
+Meteorology Academy — Minimal & Spacious Styles
 =========================================================
 */
 
@@ -11,7 +9,7 @@ Direction: synoptic chart / station model
     --chart-navy: #16303f;
     --contour-gold: #d4a24c;
     --isotherm-teal: #4d8b8b;
-    --paper-mist: #eef1ef;
+    --paper-mist: #f5f7f6; /* Softened and brightened to feel more airy */
     --fog: #93a3ac;
 
     --font-display: 'Spectral', Georgia, serif;
@@ -19,37 +17,37 @@ Direction: synoptic chart / station model
     --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
 }
 
-/* Base Body Styles for clean integration */
+/* Base resets & layout */
 body {
     margin: 0;
     padding: 0;
     font-family: var(--font-body);
     background-color: var(--paper-mist);
-    color: #34464f;
+    color: #2c3a41;
     -webkit-font-smoothing: antialiased;
 }
 
-/* Nav Bar integration */
+/* Nav Bar: Elegant & Spacious */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: var(--deep-atmosphere);
-    padding: 1.25rem 2rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 2rem 3rem; /* Expanded padding */
+    border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 
 nav .logo {
     color: var(--paper-mist);
     font-family: var(--font-display);
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.03em;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2.5rem; /* Spacious link gaps */
     margin: 0;
     padding: 0;
 }
@@ -58,8 +56,9 @@ nav a {
     color: var(--fog);
     text-decoration: none;
     font-family: var(--font-mono);
-    font-size: 0.85rem;
-    transition: color 0.2s ease;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
 }
 
 nav a:hover, nav a.active {
@@ -68,16 +67,14 @@ nav a:hover, nav a.active {
 
 @media (prefers-reduced-motion: no-preference) {
     .station-model .ring {
-        animation: contour-drift 18s linear infinite;
+        animation: contour-drift 24s linear infinite; /* Slowed down for calmer movement */
     }
-
     .station-model .ring-2 {
-        animation-duration: 24s;
+        animation-duration: 32s;
         animation-direction: reverse;
     }
-
     .station-model .ring-3 {
-        animation-duration: 32s;
+        animation-duration: 40s;
     }
 }
 
@@ -87,18 +84,18 @@ nav a:hover, nav a.active {
 }
 
 /* ---------------------------------------------------
-   Hero
+   Hero Section: Atmospheric & Airy
 --------------------------------------------------- */
 .about-hero {
     position: relative;
     overflow: hidden;
     background: var(--deep-atmosphere);
     color: var(--paper-mist);
-    min-height: 65vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6rem 2rem 8rem;
+    padding: 8rem 2rem 10rem;
     text-align: center;
 }
 
@@ -106,10 +103,10 @@ nav a:hover, nav a.active {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 640px;
+    width: 600px;
     max-width: 140vw;
     transform: translate(-50%, -50%);
-    opacity: 0.25;
+    opacity: 0.15; /* Dimmed background to prioritize textual clarity */
     pointer-events: none;
 }
 
@@ -121,219 +118,230 @@ nav a:hover, nav a.active {
 .station-model .ring {
     fill: none;
     stroke: var(--isotherm-teal);
-    stroke-width: 0.6;
-    stroke-dasharray: 4 6;
+    stroke-width: 0.5;
+    stroke-dasharray: 4 8;
 }
 
 .station-model .ring-1 { stroke: var(--contour-gold); }
-
-.station-model .station-dot {
-    fill: var(--contour-gold);
-}
-
+.station-model .station-dot { fill: var(--contour-gold); }
 .station-model .wind-barb {
     stroke: var(--paper-mist);
-    stroke-width: 1;
+    stroke-width: 0.8;
 }
 
 .eyebrow {
-    position: relative;
+    display: block;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.14em;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--contour-gold);
-    margin-bottom: 1rem;
-    display: block;
+    margin-bottom: 2rem;
 }
 
 .about-hero h1 {
-    position: relative;
     font-family: var(--font-display);
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1.15;
-    max-width: 900px;
-    margin: 0 auto 2rem;
+    font-size: clamp(2.5rem, 5.5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.2;
+    max-width: 850px;
+    margin: 0 auto 2.5rem;
 }
 
 .hero-lede {
-    position: relative;
-    max-width: 760px;
+    max-width: 700px;
     margin: 0 auto;
     font-size: 1.2rem;
-    line-height: 1.8;
+    line-height: 1.9;
     color: var(--fog);
+    font-weight: 300;
 }
 
 /* ---------------------------------------------------
-   Panels
+   Panels (The main canvas layout)
 --------------------------------------------------- */
 main {
     background: var(--paper-mist);
 }
 
 .panel {
-    max-width: 1180px;
+    max-width: 1000px; /* Narrowed down container width for editorial reading density */
     margin: 0 auto;
-    padding: 6rem 2rem;
-    border-bottom: 1px solid rgba(11,26,36,.06);
+    padding: 10rem 2rem; /* Massive, comfortable breathing room */
+    border-bottom: 1px solid rgba(11,26,36,.04);
 }
 
 .section-label {
+    display: block;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--isotherm-teal);
-    margin-bottom: 0.5rem;
-    display: block;
+    margin-bottom: 1.5rem;
 }
 
 .panel h2 {
     font-family: var(--font-display);
-    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 3rem; /* Generous gap below header */
     color: var(--deep-atmosphere);
+    line-height: 1.25;
 }
 
 .panel p {
     font-family: var(--font-body);
-    font-size: 1.05rem;
-    line-height: 1.85;
-    max-width: 760px;
-    color: #34464f;
-    margin-bottom: 1.75rem;
+    font-size: 1.1rem;
+    line-height: 2; /* Unmatched, comfortable text tracking */
+    max-width: 700px;
+    color: #43535c;
+    margin-bottom: 2rem;
+    font-weight: 300;
 }
 
-.panel a {
-    color: var(--isotherm-teal);
-    text-decoration: underline;
-    text-underline-offset: 0.15em;
-    font-family: var(--font-mono);
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.2s ease;
+/* Large introductory paragraph style */
+.panel-intro {
+    font-size: 1.4rem !important;
+    line-height: 1.8 !important;
+    color: var(--deep-atmosphere) !important;
+    font-family: var(--font-display) !important;
+    font-style: italic;
+    margin-bottom: 3rem !important;
 }
 
-.panel a:hover {
-    color: var(--contour-gold);
-}
-
-.panel a:focus-visible,
-nav a:focus-visible {
-    outline: 2px solid var(--contour-gold);
-    outline-offset: 3px;
-}
-
+/* Alternating panels just swap subtle light tones to minimize sensory noise */
 .panel:nth-of-type(even) {
-    background: #f8fafb;
+    background: transparent;
 }
-
 .panel:nth-of-type(odd) {
-    background: white;
+    background: transparent;
 }
 
 /* ---------------------------------------------------
-   Pillars
+   Pillars: Flat, Borderless, Pure Typographic Grid
 --------------------------------------------------- */
 .pillar-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 4.5rem 3rem; /* Huge comfortable spaces */
+    margin-top: 4rem;
 }
 
 .pillar {
-    background: white;
-    padding: 2.25rem;
-    border-radius: 14px;
-    border: 1px solid rgba(11,26,36,.08);
-    transition: transform .3s, box-shadow .3s;
+    background: transparent; /* Stripped background */
+    padding: 0; /* Stripped container padding */
+    border: none; /* Removed heavy boxes */
+    box-shadow: none; /* Removed heavy shadows */
 }
 
 .pillar:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0,0,0,.06);
+    transform: none; /* Removed distracting hover translation for a cleaner look */
 }
 
 .pillar-mark {
-    color: var(--contour-gold);
     font-family: var(--font-mono);
-    font-size: 0.65rem;
-    display: block;
-    margin-bottom: 0.75rem;
+    color: var(--contour-gold);
+    font-size: 0.7rem;
     letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(11,26,36,.08);
+    padding-bottom: 0.5rem;
+    max-width: 80px;
 }
 
 .pillar h3 {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+    font-weight: 500;
     color: var(--deep-atmosphere);
-    margin: 0 0 0.5rem;
+    margin: 0 0 1rem;
 }
 
 .pillar p {
-    font-size: 0.95rem;
-    color: #4a5a62;
-    line-height: 1.6;
-    margin: 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #53646d;
 }
 
 /* ---------------------------------------------------
-   Team
+   Team: Clean & Borderless Profile Grid
 --------------------------------------------------- */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 5rem 4rem;
+    margin-top: 4rem;
 }
 
 .team-card {
-    background: white;
-    border-radius: 16px;
-    padding: 2.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,.04);
-    border: 1px solid rgba(11,26,36,.04);
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
 }
 
 .avatar {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: var(--deep-atmosphere);
+    background: var(--chart-navy);
     color: var(--contour-gold);
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-mono);
-    font-size: 0.9rem;
-    margin-bottom: 1.25rem;
-    font-weight: 500;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
 }
 
 .team-card h3 {
     font-family: var(--font-display);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 500;
     color: var(--deep-atmosphere);
     margin: 0 0 0.25rem;
 }
 
 .team-role {
     font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--isotherm-teal);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .team-bio {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #53646d;
+}
+
+/* ---------------------------------------------------
+   Contact
+--------------------------------------------------- */
+.contact-link-wrapper {
+    margin-top: 3rem;
+}
+
+.minimal-link {
+    display: inline-block;
+    color: var(--isotherm-teal);
+    text-decoration: none;
+    font-family: var(--font-mono);
     font-size: 0.95rem;
-    color: #4a5a62;
-    line-height: 1.6;
-    margin: 0;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--isotherm-teal);
+    padding-bottom: 0.3rem;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.minimal-link:hover {
+    color: var(--contour-gold);
+    border-color: var(--contour-gold);
 }
 
 /* ---------------------------------------------------
@@ -343,25 +351,26 @@ nav a:focus-visible {
     background: var(--deep-atmosphere);
     color: var(--fog);
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 6rem 2rem;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    border-top: 1px solid rgba(255,255,255,0.02);
 }
 
 /* ---------------------------------------------------
-   Responsive
+   Responsive adjustments
 --------------------------------------------------- */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     nav {
         flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
-    .about-hero {
-        padding: 4rem 1.25rem 5rem;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
     }
     .panel {
-        padding: 4rem 1.25rem;
+        padding: 6rem 1.5rem;
+    }
+    .pillar-grid, .team-grid {
+        gap: 4rem 1.5rem;
     }
 }
