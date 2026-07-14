@@ -1,0 +1,342 @@
+/*
+=========================================================
+Meteorology Academy
+About Page Styles
+Direction: synoptic chart / station model
+=========================================================
+*/
+
+:root {
+
+    --deep-atmosphere: #0b1a24;
+    --chart-navy: #16303f;
+    --contour-gold: #d4a24c;
+    --isotherm-teal: #4d8b8b;
+    --paper-mist: #eef1ef;
+    --fog: #93a3ac;
+
+    --font-display: 'Spectral', Georgia, serif;
+    --font-body: 'IBM Plex Sans', Arial, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .station-model .ring {
+        animation: contour-drift 18s linear infinite;
+    }
+
+    .station-model .ring-2 {
+        animation-duration: 24s;
+        animation-direction: reverse;
+    }
+
+    .station-model .ring-3 {
+        animation-duration: 32s;
+    }
+
+}
+
+@keyframes contour-drift {
+
+    from { stroke-dashoffset: 0; }
+    to   { stroke-dashoffset: -1000; }
+
+}
+
+/* ---------------------------------------------------
+   Hero
+--------------------------------------------------- */
+
+.about-hero {
+
+    position: relative;
+    overflow: hidden;
+
+    background: var(--deep-atmosphere);
+    color: var(--paper-mist);
+
+    padding: 5rem 1.5rem 6rem;
+    text-align: center;
+
+}
+
+.station-model {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 640px;
+    max-width: 140vw;
+    transform: translate(-50%, -50%);
+    opacity: 0.35;
+    pointer-events: none;
+
+}
+
+.station-model svg {
+    width: 100%;
+    height: 100%;
+}
+
+.station-model .ring {
+
+    fill: none;
+    stroke: var(--isotherm-teal);
+    stroke-width: 0.6;
+    stroke-dasharray: 4 6;
+
+}
+
+.station-model .ring-1 { stroke: var(--contour-gold); }
+
+.station-model .station-dot {
+    fill: var(--contour-gold);
+}
+
+.station-model .wind-barb {
+    stroke: var(--paper-mist);
+    stroke-width: 1;
+}
+
+.eyebrow {
+
+    position: relative;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--contour-gold);
+    margin-bottom: 1rem;
+
+}
+
+.about-hero h1 {
+
+    position: relative;
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 600;
+    margin: 0 0 1.25rem;
+
+}
+
+.hero-lede {
+
+    position: relative;
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--fog);
+
+}
+
+/* ---------------------------------------------------
+   Panels
+--------------------------------------------------- */
+
+main {
+    background: var(--paper-mist);
+}
+
+.panel {
+
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    border-bottom: 1px solid rgba(11, 26, 36, 0.08);
+
+}
+
+.section-label {
+
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--isotherm-teal);
+    margin-bottom: 0.5rem;
+
+}
+
+.panel h2 {
+
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--deep-atmosphere);
+    margin: 0 0 1.25rem;
+
+}
+
+.panel p {
+
+    font-family: var(--font-body);
+    line-height: 1.7;
+    color: #34464f;
+    max-width: 40rem;
+
+}
+
+.panel a {
+
+    color: var(--isotherm-teal);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+
+}
+
+.panel a:focus-visible,
+nav a:focus-visible {
+
+    outline: 2px solid var(--contour-gold);
+    outline-offset: 3px;
+
+}
+
+/* ---------------------------------------------------
+   Pillars
+--------------------------------------------------- */
+
+.pillar-grid {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+
+}
+
+.pillar-mark {
+
+    color: var(--contour-gold);
+    font-size: 0.6rem;
+    display: block;
+    margin-bottom: 0.75rem;
+
+}
+
+.pillar h3 {
+
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--deep-atmosphere);
+    margin: 0 0 0.5rem;
+
+}
+
+.pillar p {
+
+    font-size: 0.95rem;
+    color: #4a5a62;
+
+}
+
+/* ---------------------------------------------------
+   Team
+--------------------------------------------------- */
+
+.team-grid {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+
+}
+
+.team-card {
+
+    background: #ffffff;
+    border: 1px solid rgba(11, 26, 36, 0.08);
+    border-radius: 4px;
+    padding: 2rem;
+
+}
+
+.avatar {
+
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--deep-atmosphere);
+    color: var(--contour-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+
+}
+
+.team-card h3 {
+
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--deep-atmosphere);
+    margin: 0 0 0.15rem;
+
+}
+
+.team-role {
+
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--isotherm-teal);
+    margin-bottom: 1rem;
+
+}
+
+.team-bio {
+
+    font-size: 0.95rem;
+    color: #4a5a62;
+    max-width: none;
+
+}
+
+/* ---------------------------------------------------
+   Footer
+--------------------------------------------------- */
+
+.about-footer {
+
+    background: var(--deep-atmosphere);
+    color: var(--fog);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+
+}
+
+/* ---------------------------------------------------
+   Nav active state (in case not already styled)
+--------------------------------------------------- */
+
+nav a.active {
+
+    color: var(--contour-gold);
+    font-weight: 600;
+
+}
+
+/* ---------------------------------------------------
+   Responsive
+--------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .about-hero {
+        padding: 3.5rem 1.25rem 4rem;
+    }
+
+    .panel {
+        padding: 3rem 1.25rem;
+    }
+
+}
