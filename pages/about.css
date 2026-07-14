@@ -7,7 +7,6 @@ Direction: synoptic chart / station model
 */
 
 :root {
-
     --deep-atmosphere: #0b1a24;
     --chart-navy: #16303f;
     --contour-gold: #d4a24c;
@@ -18,11 +17,56 @@ Direction: synoptic chart / station model
     --font-display: 'Spectral', Georgia, serif;
     --font-body: 'IBM Plex Sans', Arial, sans-serif;
     --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+}
 
+/* Base Body Styles for clean integration */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    background-color: var(--paper-mist);
+    color: #34464f;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Nav Bar integration */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--deep-atmosphere);
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+nav .logo {
+    color: var(--paper-mist);
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--fog);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--contour-gold);
 }
 
 @media (prefers-reduced-motion: no-preference) {
-
     .station-model .ring {
         animation: contour-drift 18s linear infinite;
     }
@@ -35,51 +79,38 @@ Direction: synoptic chart / station model
     .station-model .ring-3 {
         animation-duration: 32s;
     }
-
 }
 
 @keyframes contour-drift {
-
     from { stroke-dashoffset: 0; }
     to   { stroke-dashoffset: -1000; }
-
 }
 
 /* ---------------------------------------------------
    Hero
 --------------------------------------------------- */
-
 .about-hero {
-
     position: relative;
     overflow: hidden;
-
     background: var(--deep-atmosphere);
     color: var(--paper-mist);
-
-    min-height: 78vh;
-
+    min-height: 65vh;
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 6rem 2rem 8rem;
-
     text-align: center;
-
 }
 
 .station-model {
-
     position: absolute;
     top: 50%;
     left: 50%;
     width: 640px;
     max-width: 140vw;
     transform: translate(-50%, -50%);
-    opacity: 0.35;
+    opacity: 0.25;
     pointer-events: none;
-
 }
 
 .station-model svg {
@@ -88,12 +119,10 @@ Direction: synoptic chart / station model
 }
 
 .station-model .ring {
-
     fill: none;
     stroke: var(--isotherm-teal);
     stroke-width: 0.6;
     stroke-dasharray: 4 6;
-
 }
 
 .station-model .ring-1 { stroke: var(--contour-gold); }
@@ -108,7 +137,6 @@ Direction: synoptic chart / station model
 }
 
 .eyebrow {
-
     position: relative;
     font-family: var(--font-mono);
     font-size: 0.75rem;
@@ -116,217 +144,161 @@ Direction: synoptic chart / station model
     text-transform: uppercase;
     color: var(--contour-gold);
     margin-bottom: 1rem;
-
+    display: block;
 }
 
 .about-hero h1 {
-
     position: relative;
-
     font-family: var(--font-display);
-
-    font-size: clamp(3rem,6vw,4.5rem);
-
-    line-height: 1.1;
-
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.15;
     max-width: 900px;
-
     margin: 0 auto 2rem;
-
 }
 
 .hero-lede {
-
     position: relative;
-
     max-width: 760px;
-
     margin: 0 auto;
-
-    font-size: 1.25rem;
-
-    line-height: 1.9;
-
+    font-size: 1.2rem;
+    line-height: 1.8;
     color: var(--fog);
-
 }
 
 /* ---------------------------------------------------
    Panels
 --------------------------------------------------- */
-
 main {
     background: var(--paper-mist);
 }
 
 .panel {
-
     max-width: 1180px;
-
     margin: 0 auto;
-
-    padding: 8rem 2rem;
-
+    padding: 6rem 2rem;
     border-bottom: 1px solid rgba(11,26,36,.06);
-
 }
 
 .section-label {
-
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.1rem;
     text-transform: uppercase;
     color: var(--isotherm-teal);
     margin-bottom: 0.5rem;
-
+    display: block;
 }
 
 .panel h2 {
-
     font-family: var(--font-display);
-
-    font-size: clamp(2rem,4vw,2.8rem);
-
-    margin-bottom: 2rem;
-
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
     color: var(--deep-atmosphere);
-
 }
 
 .panel p {
-
     font-family: var(--font-body);
-
-    font-size: 1.08rem;
-
-    line-height: 2;
-
+    font-size: 1.05rem;
+    line-height: 1.85;
     max-width: 760px;
-
     color: #34464f;
-
     margin-bottom: 1.75rem;
-
 }
 
 .panel a {
-
     color: var(--isotherm-teal);
     text-decoration: underline;
     text-underline-offset: 0.15em;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
 
+.panel a:hover {
+    color: var(--contour-gold);
 }
 
 .panel a:focus-visible,
 nav a:focus-visible {
-
     outline: 2px solid var(--contour-gold);
     outline-offset: 3px;
-
 }
 
-.panel:nth-of-type(even){
-
-    background:#f8fafb;
-
+.panel:nth-of-type(even) {
+    background: #f8fafb;
 }
 
-.panel:nth-of-type(odd){
-
-    background:white;
-
+.panel:nth-of-type(odd) {
+    background: white;
 }
 
 /* ---------------------------------------------------
    Pillars
 --------------------------------------------------- */
-
 .pillar-grid {
-
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 3rem;
-    margin-top: 2rem;
-
-}
-
-.pillar-mark {
-
-    color: var(--contour-gold);
-    font-size: 0.6rem;
-    display: block;
-    margin-bottom: 0.75rem;
-
-}
-
-.pillar h3 {
-
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    color: var(--deep-atmosphere);
-    margin: 0 0 0.5rem;
-
-}
-
-.pillar p {
-
-    font-size: 0.95rem;
-    color: #4a5a62;
-
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
 }
 
 .pillar {
-
-    background:white;
-
-    padding:2.5rem;
-
-    border-radius:18px;
-
-    border:1px solid rgba(11,26,36,.08);
-
-    transition:.3s;
-
+    background: white;
+    padding: 2.25rem;
+    border-radius: 14px;
+    border: 1px solid rgba(11,26,36,.08);
+    transition: transform .3s, box-shadow .3s;
 }
 
-.pillar:hover{
+.pillar:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.06);
+}
 
-    transform:translateY(-8px);
+.pillar-mark {
+    color: var(--contour-gold);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    display: block;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.1em;
+}
 
-    box-shadow:0 25px 50px rgba(0,0,0,.08);
+.pillar h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--deep-atmosphere);
+    margin: 0 0 0.5rem;
+}
 
+.pillar p {
+    font-size: 0.95rem;
+    color: #4a5a62;
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* ---------------------------------------------------
    Team
 --------------------------------------------------- */
-
 .team-grid {
-
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 4rem;
-    margin-top: 4rem;
-
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
 }
 
-.team-card{
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:3rem;
-
-    box-shadow:0 18px 45px rgba(0,0,0,.06);
-
-    border:none;
-
+.team-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,.04);
+    border: 1px solid rgba(11,26,36,.04);
 }
 
 .avatar {
-
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -338,75 +310,58 @@ nav a:focus-visible {
     font-family: var(--font-mono);
     font-size: 0.9rem;
     margin-bottom: 1.25rem;
-
+    font-weight: 500;
 }
 
 .team-card h3 {
-
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     color: var(--deep-atmosphere);
-    margin: 0 0 0.15rem;
-
+    margin: 0 0 0.25rem;
 }
 
 .team-role {
-
     font-family: var(--font-mono);
     font-size: 0.75rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--isotherm-teal);
     margin-bottom: 1rem;
-
 }
 
 .team-bio {
-
     font-size: 0.95rem;
     color: #4a5a62;
-    max-width: none;
-
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* ---------------------------------------------------
    Footer
 --------------------------------------------------- */
-
 .about-footer {
-
     background: var(--deep-atmosphere);
     color: var(--fog);
     text-align: center;
-    padding: 5rem 2rem;
+    padding: 4rem 2rem;
     font-family: var(--font-mono);
     font-size: 0.8rem;
-
-}
-
-/* ---------------------------------------------------
-   Nav active state (in case not already styled)
---------------------------------------------------- */
-
-nav a.active {
-
-    color: var(--contour-gold);
-    font-weight: 600;
-
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 /* ---------------------------------------------------
    Responsive
 --------------------------------------------------- */
-
 @media (max-width: 600px) {
-
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
     .about-hero {
-        padding: 3.5rem 1.25rem 4rem;
+        padding: 4rem 1.25rem 5rem;
     }
-
     .panel {
-        padding: 3rem 1.25rem;
+        padding: 4rem 1.25rem;
     }
-
 }
